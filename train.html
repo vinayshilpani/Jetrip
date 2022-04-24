@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- animation cdn -->
+    
+
+    
+    <!-- link css & media -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="print.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <title>Welcome to Jetrip</title>
+    
+</head>
+<body>
+
+<!-- navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="nav_bar">
+    <div class="container-fluid m-lg-3">
+        <a class="navbar-brand" href="">
+            <img src="logo2.png" alt="" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler"><i class="bi bi-grid-fill"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hotel.html">Hotel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="flight.html">Flight</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbarNav_active" href="train.html">Train</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">Contact Us</a>
+                </li>
+                
+                <span class="sign_up py-lg-2 ">
+                    <h6 type="button" data-bs-toggle="modal" data-bs-target="#book_modal" class="m-lg-1">Book Your Trip</h6>
+                </span>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- home banner -->
+
+<div class="container-fluid"> 
+    <header class="row" id="train_banner">        
+    </header>
+</div>
+
+<!-- search bar -->
+<section class="col-lg-5 border ms-lg-5  py-5 text-center train_search" id="fly_search">
+    <h4 class="fw-bold text-center">Search Train</h4>
+    <div id="fly_check">
+        <div class="col text-center my-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">A/C</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Non</label>
+            </div>   
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <label class="form-check-label" for="inlineRadio3">Both</label>
+            </div>   
+        </div>
+    </div>
+    <input type="text" name="" id="fly_search_1" class="form-control"  placeholder="DEL - New Delhi">
+    <i class="fa-solid fa-arrow-right-arrow-left mt-2"></i>
+    <input type="text" name="" id="fly_search_2" class="form-control"  placeholder="TRV - Trivandrum">
+    <div id="fly_search_3" class="my-4 d-flex justify-content-around text-center w-75">
+        <span class="input-group mb-3 me-2">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i></span>
+            <input type="text" class="form-control" placeholder="25 FEB 2022" aria-label="" aria-describedby="basic-addon1">
+        </span>
+        <span class="input-group mb-3 me-2">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-train"></i></span>
+            <input type="text" class="form-control" placeholder="Sleeper Class" aria-label="" aria-describedby="basic-addon1">
+        </span>
+    </div>
+    <a href="" class="px-5" data-bs-toggle="modal" data-bs-target="#under_c_modal"> Check Availability </a>
+</section>
+
+
+<!-- search result -->
+
+<div class="container">
+    <header class="row px-4 mb-5" id="train_date">
+        <section class="col py-2 pt-5">
+            <h1 class="pt-3 pt-md-2"> Search <b> Result </b></h1>
+        </section>
+    </header>
+    <header class="row">
+        <section class="col-md-6">
+            <header>
+                <h3 class="fw-bold">Date</h3>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="train_date">
+                    <input type="radio" class="btn-check" name="btn_radio" id="btnradio_1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio_1">25 FEB</label>
+                
+                    <input type="radio" class="btn-check" name="btn_radio" id="btnradio_2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio_2">26 FEB</label>
+                
+                    <input type="radio" class="btn-check" name="btn_radio" id="btnradio_3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio_3">27 FEB</label>
+
+                    <input type="radio" class="btn-check" name="btn_radio" id="btnradio_4" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio_4">28 FEB</label>
+                </div>
+            </header>
+            <header class="d-none d-md-block">
+                <h3 class="fw-bold mt-5">Journey Class</h3>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="train_date">
+                    <input type="radio" class="btn-check" name="btn_ radio" id="btnradio_ 1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio_ 1">Sleeper Class</label>
+                
+                    <input type="radio" class="btn-check" name="btn_ radio" id="btnradio_ 2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio_ 2">First AC</label>
+                
+                    <input type="radio" class="btn-check" name="btn_ radio" id="btnradio_ 3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio_ 3">AC 2 tier</label>
+
+                    <input type="radio" class="btn-check" name="btn_ radio" id="btnradio_ 4" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio_ 4">Second Seating</label>
+                </div>
+            </header>
+            <header class="mt-5 d-none d-md-block">
+                <h4 class="fw-bold">Arrival Time</h4>
+                <label for="customRange1" class="form-label">12:00 AM</label> <br>
+                <input type="range" class="form-range w-75" id="customRange1">
+            </header>
+            <header class="mt-3 d-none d-md-block">
+                <h4 class="fw-bold">Departure Time</h4>
+                <label for="customRange2" class="form-label">12:00 AM</label> <br>
+                <input type="range" class="form-range w-75" id="customRange2">
+            </header>
+        </section>
+        <section class="col-md-6" id="train_result">
+            <header class="border my-3 p-3">
+                <h5 class="fw-bold mb-3">22692 - SBC RAJDHANI</h5>
+                <div class="d-flex justify-content-between">
+                    <section>
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                    <section class="d-flex align-items-center">
+                        <p>
+                            -------
+                            <i class="fa-solid fa-train-tram"></i>
+                            -------
+                        </p>
+                    </section>
+                    <section >
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                </div>
+                <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Check Available Seats</a>
+
+                <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            <div class="d-flex justify-content-around">
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        First Class
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                        20
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section class="d-none d-md-block" data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Second Sit.
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                        162
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Sleeper
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        5
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
+            </header>
+            <header class="border my-3 p-3">
+                <h5 class="fw-bold mb-3">22692 - SBC RAJDHANI</h5>
+                <div class="d-flex justify-content-between">
+                    <section>
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                    <section class="d-flex align-items-center">
+                        <p>
+                            -------
+                            <i class="fa-solid fa-train-tram"></i>
+                            -------
+                        </p>
+                    </section>
+                    <section >
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                </div>
+                <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Check Available Seats</a>
+
+                <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body">
+                            <div class="d-flex justify-content-around">
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        First Class
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                        20
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section class="d-none d-md-block" data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Second Sit.
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                        162
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Sleeper
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        5
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </header>
+            <header class="border my-3 p-3">
+                <h5 class="fw-bold mb-3">22692 - SBC RAJDHANI</h5>
+                <div class="d-flex justify-content-between">
+                    <section>
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                    <section class="d-flex align-items-center">
+                        <p>
+                            -------
+                            <i class="fa-solid fa-train-tram"></i>
+                            -------
+                        </p>
+                    </section>
+                    <section >
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                </div>
+                <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">Check Available Seats</a>
+
+                <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body">
+                            <div class="d-flex justify-content-around">
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        First Class
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                        20
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section class="d-none d-md-block" data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Second Sit.
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                        162
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Sleeper
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        5
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </header>
+            <header class="border my-3 p-3">
+                <h5 class="fw-bold mb-3">22692 - SBC RAJDHANI</h5>
+                <div class="d-flex justify-content-between">
+                    <section>
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                    <section class="d-flex align-items-center">
+                        <p>
+                            -------
+                            <i class="fa-solid fa-train-tram"></i>
+                            -------
+                        </p>
+                    </section>
+                    <section >
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                </div>
+                <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample4">Check Available Seats</a>
+
+                <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample4">
+                        <div class="card card-body">
+                            <div class="d-flex justify-content-around">
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        First Class
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                        20
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section class="d-none d-md-block" data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Second Sit.
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                        162
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Sleeper
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        5
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </header>
+            <header class="border my-3 p-3">
+                <h5 class="fw-bold mb-3">22692 - SBC RAJDHANI</h5>
+                <div class="d-flex justify-content-between">
+                    <section>
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                    <section class="d-flex align-items-center">
+                        <p>
+                            -------
+                            <i class="fa-solid fa-train-tram"></i>
+                            -------
+                        </p>
+                    </section>
+                    <section >
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                </div>
+                <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample5" role="button" aria-expanded="false" aria-controls="multiCollapseExample5">Check Available Seats</a>
+
+                <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample5">
+                        <div class="card card-body">
+                            <div class="d-flex justify-content-around">
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        First Class
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                        20
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section class="d-none d-md-block" data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Second Sit.
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                        162
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Sleeper
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        5
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </header>
+            <header class="border my-3 p-3">
+                <h5 class="fw-bold mb-3">22692 - SBC RAJDHANI</h5>
+                <div class="d-flex justify-content-between">
+                    <section>
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                    <section class="d-flex align-items-center">
+                        <p>
+                            -------
+                            <i class="fa-solid fa-train-tram"></i>
+                            -------
+                        </p>
+                    </section>
+                    <section >
+                        <p class="m-0"> <h6 class="fw-bold m-0">12:30 PM</h6>New Delhi </p> 
+                    </section>
+                </div>
+                <a class="btn" data-bs-toggle="collapse" href="#multiCollapseExample6" role="button" aria-expanded="false" aria-controls="multiCollapseExample6">Check Available Seats</a>
+
+                <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample6">
+                        <div class="card card-body">
+                            <div class="d-flex justify-content-around">
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        First Class
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                        20
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section class="d-none d-md-block" data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Second Sit.
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                                        162
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                                <section data-bs-toggle="modal" data-bs-target="#under_c_modal">
+                                    <button type="button" class="btn btn-dark position-relative">
+                                        Sleeper
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        5
+                                        <span class="visually-hidden"></span>
+                                        </span>
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </header>
+        </section>
+    </header>
+</div>
+
+
+<!-- train info service -->
+
+<div class="container my-5">
+    <header class="row my-3">
+        <section class="col">
+            <h1>Train Information Services</h1>
+        </section>
+    </header>
+    <header class="row g-0 " id="train_info">
+        <section class="col-md-3">
+            <div>
+                <img src="media/t_icon01.png" alt="" class="img-fluid" width="50px">
+                <span class="">Live Train Information</span>
+            </div>
+        </section>
+        <section class="col-md-3">
+            <div>
+                <img src="media/t_icon02.png" alt="" class="img-fluid" width="50px">
+                <span class=""> Train Coach Position</span>
+            </div>
+        </section>
+        <section class="col-md-3">
+            <div>
+                <img src="media/t_icon03.png" alt="" class="img-fluid" width="50px">
+                <span class="">Check PNR Status</span>
+            </div>
+        </section>
+        <section class="col-md-3">
+            <div>
+                <img src="media/t_icon04.png" alt="" class="img-fluid" width="50px">
+                <span class="">Platform Locator</span>
+            </div>
+        </section>
+    </header>
+</div>
+
+
+<!-- offers -->
+
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-sm-12">
+			<h1 class="m-md-5 m-3"> Exclusive <b> Train Offers</b></h1>
+			<div id="offer_carousel" class="carousel slide mb-5" data-bs-ride="carousel">
+
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner text-center">
+					<div class="carousel-item active" data-bs-interval="3000">
+						<div class="row">
+							<div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (1).png" alt="" class="img-fluid">
+								</div>
+							</div>
+                            <div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (3).png" alt="" class="img-fluid">
+								</div>
+							</div>
+							<div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (2).png" alt="" class="img-fluid">
+								</div>
+							</div>
+						</div>			
+					</div>
+					<div class="carousel-item" data-bs-interval="3000">
+						<div class="row">
+							<div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (6).png" alt="" class="img-fluid">
+								</div>
+							</div>
+                            <div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (5).png" alt="" class="img-fluid">
+								</div>
+							</div>
+							<div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (4).png" alt="" class="img-fluid">
+								</div>
+							</div>
+						</div>			
+					</div>
+					<div class="carousel-item" data-bs-interval="3000">
+						<div class="row">
+							<div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (1).png" alt="" class="img-fluid">
+								</div>
+							</div>
+                            <div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (2).png" alt="" class="img-fluid">
+								</div>
+							</div>
+							<div class="col-4 my-2">
+								<div class="media">
+									<img src="media/train_offer (5).png" alt="" class="img-fluid">
+								</div>
+							</div>
+						</div>			
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- why jetrip -->
+
+<div class="container">
+    <header class="row px-4">
+        <section class="col pt-2 pt-md-3">
+            <h1 class="pt-3 pt-md-2"> Why <b> Jetrip </b></h1>
+        </section>
+    </header>
+    <header class="row mt-5 g-0" id="why_train">
+        <section class="col-md-4">
+            <div class="float-start h-100 ms-3">
+                <img src="media/train_icon1.png" alt="" class="img-fluid" width="50px">
+            </div>
+            <div  class="h-100 me-3">
+                <h6 class="fw-bold">IRCTC Authorised Partner</h6>
+                <p>
+                    Jetrip is authorized partner of IRCTC, booking train tickets since 2018.
+                </p>
+            </div>
+        </section>
+        <section class="col-md-4">
+            <div class="float-start h-100 ms-3">
+                <img src="media/train_icon2.svg" alt="" class="img-fluid" width="50px">
+            </div>
+            <div  class="h-100 me-3">
+                <h6 class="fw-bold">Live Station</h6>
+                <p>
+                    Get a complete list of trains that shall be arriving at the railway station.
+                </p>
+            </div>
+        </section>
+        <section class="col-md-4">
+            <div class="float-start h-100 ms-3">
+                <img src="media/train_icon3.svg" alt="" class="img-fluid" width="50px">
+            </div>
+            <div class="h-100 me-3">
+                <h6 class="fw-bold">Live Status</h6>
+                <p>
+                    Get to know the Live Status of Indian railway train and delays, if any.
+                </p>
+            </div>
+        </section>
+        <section class="col-md-4">
+            <div class="float-start h-100 ms-3">
+                <img src="media/train_icon4.png" alt="" class="img-fluid" width="50px">
+            </div>
+            <div  class="h-100 me-3">
+                <h6 class="fw-bold">IRCTC Train Food Booking</h6>
+                <p>
+                    Enjoy booking IRCTC Food &
+                    Get Food Delivered on Train
+                </p>
+            </div>
+        </section>
+        <section class="col-md-4">
+            <div class="float-start h-100 ms-3">
+                <img src="media/train_icon5.svg" alt="" class="img-fluid" width="50px">
+            </div>
+            <div  class="h-100 me-3">
+                <h6 class="fw-bold">IRCTC Instant Refunds and Cancellations</h6>
+                <p>
+                    Get instant refund and book your next IRCTC train ticket without any hassle.
+                </p>
+            </div>
+        </section>
+        <section class="col-md-4">
+            <div class="float-start h-100 ms-3">
+                <img src="media/train_icon6.svg" alt="" class="img-fluid" width="50px">
+            </div>
+            <div class="h-100 me-3">
+                <h6 class="fw-bold">24*7 Customer Service</h6>
+                <p>
+                    We work 24 hours a day to make sure our availability whenever our customers need us.
+                </p>
+            </div>
+        </section>
+    </header>
+</div>
+
+
+
+<!-- download app -->
+
+<div class="container my-md-5 my-3">
+    <header class="row text-center text-md-start" id="down_app" style="background-color: rgb(227,210,255);">
+        <div class="col-md-6 g-0 pb-3 pb-md-0">
+            <video autoplay loop muted class="img-fluid w-100 h-100" >
+                <source src="media/train_app.mp4">
+            </video>
+        </div>
+        <section class="col-md-6 pb-3 ps-md-3">
+            <h1 class="fw-bold">Book your tickets <br> in less than a minute.</h1>
+            <p class="">
+                Create an account and save your travel preferences. <br> Checkout in less than a minute.
+            </p>
+            <h6 class="m-0"><a href=""><img src="media/icons8-google-20.png" alt=""> Sign up with Google</a></h6>
+            <h6 class="my-4"><a href="" ><img src="media/icons8-ringing-phone-20.png" alt="">  Sign up with Phone</a></h6>
+        </section>
+    </header>
+</div>
+
+
+
+<!-- FAQ -->
+
+<div class="container">
+    <header class="row px-4">
+        <section class="col py-2  ">
+            <h1 class="pt-3 pt-md-2"> <b> FAQ </b></h1>
+        </section>
+    </header>
+</div>
+
+<div class="container accordion mt-2 faq" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          How to book Train tickets ?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            In order to book train ticket logon to jetrip Air, enter departure and arrival destination, travel dates, number of passengers and travel class to get a list of all available trains that you can compare and choose from.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Which seat is cheapest for train tickets ?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            When you have performed a train search on jetrip you get a list of all available trains for your desired dates. After checking out prices and entering your personal information you can check train seat availability by seeing seat map of the train that you will be getting on for your travel and choose your seat accordingly.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          How to get a low fare train ticket ?
+        </button>
+      </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            The best way to get a low fare train ticket is to filter your search on the basis of price which will then refresh the page and display a list of trains with the cheapest one on top and most expensive one on bottom. One can even select the price range to get trains only within that particular price range.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Can I show the train ticket on mobile? ?
+            </button>
+            </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Yes you can! Users can now easily book train tickets on their mobile phones with jetrip. An M-ticket will be sent post booking, which helps you save paper without having to take printouts.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- download app -->
+
+<div class="container" id="download_app">
+    <header class="row mt-5" style="background-color: rgb(195,200,233);">
+        <section class="col-md-5 order-1 order-md-0 text-center">
+            <div class="pt-3">
+                <h1 class="fw-bold">DOWNLOAD APP <br> FOR <br> BEST EXPERIENCE</h1>
+            </div>
+            <img src="media/google_play.png" alt="">
+        </section>
+        <div class="col-md-7 order-0 order-md-1 g-0">
+            <img src="media/train_app.png" alt="" class="img-fluid rounded-pill">
+        </div>
+    </header>
+</div>
+
+
+<!-- footer -->
+
+<div class="container-fluid pt-5 text-center text-md-start">
+    <header class="row mt-5 pe-md-5" id="footer">
+        <section class="col-md-3 pt-5 ps-md-5">
+            <h5 class="ms-md-5 mb-md-5 fw-bold">
+                <img src="logo.png" alt="">
+            </h5>
+            <p class="ps-md-5">
+                We always make our customer <br> 
+                happy by providing as many <br> 
+                choice as possible.
+            </p>
+
+        </section>
+        <section class="col-md-2">
+            <h5 class="m-md-5 fw-bold">About</h5>
+            <ul>
+                <li>
+                    <a href="">About Us</a>
+                </li>
+                <li>
+                    <a href="">Features</a>
+                </li>
+                <li>
+                    <a href="">News</a>
+                </li>
+                <li class="d-none d-md-block">
+                    <a href="">Menu</a>
+                </li>
+            </ul>
+        </section>
+        <section class="col-md-2 d-none d-md-block">
+            <h5 class="m-md-5 fw-bold">Company</h5>
+            <ul>
+                <li>
+                    <a href="">Why Jetrip</a>
+                </li>
+                <li>
+                    <a href="">Partner With Us</a>
+                </li>
+                <li>
+                    <a href="">FAQ</a>
+                </li>
+                <li>
+                    <a href="">Blog</a>
+                </li>
+            </ul>
+        </section>
+        <section class="col-md-2">
+            <h5 class="m-md-5 fw-bold">Support</h5>
+            <ul>
+                <li>
+                    <a href="">Account</a>
+                </li>
+                <li class="d-none d-md-block">
+                    <a href="">Support Center</a>
+                </li>
+                <li>
+                    <a href="">Feedback</a>
+                </li>
+                <li>
+                    <a href="">Contact Us</a>
+                </li>
+            </ul>
+        </section>
+        <section class="col-md-3 pb-3">
+            <h5 class="m-md-5 fw-bold">Get in Touch</h5>
+            <p>
+                Question or feedback ? <br>
+                We'd love to hear from you 
+            </p>
+            <div class="input-group flex-nowrap pe-md-5">
+                <input type="email" class="form-control" placeholder="Email Address" aria-label="email" aria-describedby="addon-wrapping">
+                <span class="input-group-text" id="addon-wrapping">
+                    <img src="media/paper-plane.png" alt="" data-bs-toggle="modal" data-bs-target="#under_c_modal" >
+                </span>
+            </div>
+
+        </section>
+    </header>
+</div>
+
+
+<!-- The book Modal -->
+
+
+<div class="modal" id="book_modal">
+    <div class="modal-dialog modal-fullscreen">
+      <header class="modal-content" id="first_modal" >
+        
+        <section id="modal_1">
+            <div id="modal_1_1" class="ps-lg-3 pt-lg-5 text-center">
+            <form action="" method="post" class="form-check form-switch">
+
+                <h3 class="fw-bold">Welcome Back</h3>
+                <p class="fs-6">Welcome Back Please Enter Your Details.</p>
+
+                <label for="Email" class="fw-bold my-1">Email</label> <br>
+                <input type="email" name="email" id="" placeholder="Enter Your Email"> <br>
+
+                <label for="password" class="fw-bold my-1">Password</label> <br>
+                <input type="password" name="password" id="" password>
+
+
+                <h6 class="fw-bold mt-1 mb-lg-4">Forgot Password</h6>
+
+                <button class="my-3" ><a href="" id="sign_btn" data-bs-toggle="modal" data-bs-target="#under_c_modal">Sign in</a></button>
+                <button class="my-lg-4 my-sm-2" ><a href="" data-bs-toggle="modal" data-bs-target="#under_c_modal" id="sign_btn_g"><img src="media/icons8-google-20.png" alt=""> Sign in with Google</a></button>
+                <p>Don't have an account ? <b>Sign up for free</b> </p>
+                
+            </form>
+            <video autoplay muted loop class="d-none d-lg-block">
+                <source src="media/small-airplane-1-.mp4" type="video/mp4">
+            </video>
+            </div>
+            <div id="modal_1_2">
+                <section class="d-none d-lg-block">
+                    <h6>
+                        The perfect combination- lone travelling, excellent organization and the best of experiences , thank you.
+                    </h6>
+
+                    <h4 class="mt-3 text-end">...  &nbsp; Nariyalna</h4>
+                    <div class="mt-3">
+                        <i class="fa-solid fa-caret-left"></i>
+                        <i class="fa-solid fa-caret-right"></i>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <i class="fa-solid fa-circle-xmark" data-bs-dismiss="modal"></i> 
+      </header>
+    </div>
+</div>
+
+<div class="modal" id="under_c_modal">
+    <div class="modal-dialog" id="modal-2">
+		<div class="modal-content text-center">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="fa-solid fa-check"></i>
+				</div>				
+				<h4 class="modal-title w-100">Thank You!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">But Currently Bookings are not allowed.</p>
+			</div>
+            <div>
+                <a href="" data-bs-dismiss="modal">Okay</a>
+            </div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Bootstrap script cdn -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</script>
+
+
+
+
+</body>
+</html>

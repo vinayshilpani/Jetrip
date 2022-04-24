@@ -1,0 +1,253 @@
+/* for mobile */
+
+@media screen and (max-width: 576px) {
+
+
+/* navbar */
+
+#navbarNav ul{
+    width: 100%;
+    padding:0px 20px;
+}
+
+.sign_up{
+    position: static;
+    text-align: center;
+    margin: 15px;
+}
+
+/* modal */
+
+
+#modal_1{
+    width: 100%;
+    flex-direction: column;
+}
+
+#modal_1 div{
+    width: 100%;
+}
+
+#modal_1_1{
+    border-radius: 30px 30px 0 0;
+}
+
+
+#modal_1_2{
+    border-radius: 0 0 30px 30px;
+}
+
+#modal-2{
+    width: 80%;
+    padding-top: 200px;
+    margin: auto;
+    
+}
+
+#experience section{
+    height: 40vh;
+}
+
+#first_modal > i{
+    position: absolute;    
+    top: 80%;
+    right: 45%;
+    font-size: 2.5rem;
+}
+
+
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    
+    #footer ul{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+
+    #footer ul li{
+        float: left;
+    }
+
+
+    #hotel_carousel .carousel-inner{
+        border-radius: 20px !important;
+    }
+
+    #hotel_carousel_2{
+        margin-top: 30px;
+        height: 50vh;
+        border-radius: 20px !important;
+    }
+
+    #hotel_multi_carousel .card > div img{
+        height: 100%;
+    }
+
+    #hotel_multi_carousel .btn-success{
+        display: flex;
+        text-align: center;
+    }
+
+    #hotel_grid{
+        width: 99%;
+        margin: auto;
+    }
+
+    #hotel_grid h2,
+    #hotel_grid h3,
+    #hotel_grid a{
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 300px;
+    }
+
+    #hotel_grid a{
+        margin: 10px 100px;
+        left: 0;
+    }
+
+    #facilities{
+        margin-top: 80px;
+    }
+    
+    #flight_banner header{
+        overflow: visible;
+        height: auto;
+    }
+
+    #flight_banner video{
+        position: static;
+        z-index: 2;
+    }
+
+    #fly_search{
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .result_border{
+        border: none;
+    }
+
+    #extra_result{
+        display: none;
+    }
+
+    .train_search{
+        height: fit-content;
+        top: 80px;
+    }
+
+    .train_search .form-check-inline{
+        margin-right: 0;
+    }
+
+    #main_about section{
+        position: static;
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 20px;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* for laptop */
+
+@media screen and (max-width: 992px) {
+    
+.sign_up{
+    position: static;
+    text-align: center;
+    margin: 15px;
+    padding: 10px 30px;
+}
+
+#first_modal{
+    background-color: white !important;
+    height: auto;
+}
+
+#modal_1{
+    width: 100%;
+    flex-direction: column;
+}
+
+#modal_1 div{
+    width: 100%;
+    text-align: center;
+}
+
+#modal_1_1{
+    border-radius: 30px 30px 0 0;
+}
+
+
+#modal_1_2{
+    border-radius: 0 0 30px 30px;
+}
+
+#sign_btn{
+    padding: 8px 25px;
+}
+
+#sign_btn_g{
+    padding: 8px 25px;
+}
+
+
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 1230px) {
+
+    #search_bar{
+        position: static;
+    }
+
+    #popular_search{
+        position: static;
+    }
+
+    #popular_search a{
+        padding: 8px 15px;
+        margin: 0 5px;
+    }
+
+    #inspire section div{
+        height: 250px;
+    }
+
+
+
+
+}
+
+
